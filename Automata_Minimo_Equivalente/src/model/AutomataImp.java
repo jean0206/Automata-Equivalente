@@ -35,7 +35,7 @@ public class AutomataImp implements Automata {
 	/**
 	 * Type of machine, True for Mealy and False for Moore.
 	 */
-	private Boolean type;
+	private boolean type;
 	
 	/**
 	 * The matrix of automata
@@ -153,7 +153,6 @@ public class AutomataImp implements Automata {
 	}
 	
 	
-	
 	/**
 	 * A recursive method that get out the accessible states from a given
 	 * @param visited that help to store the states visited
@@ -183,8 +182,8 @@ public class AutomataImp implements Automata {
 	}
 	
 	@Override
-	public ArrayList<ArrayList<String>> stepTwo(HashSet<String> cEq) {
-		ArrayList<ArrayList<String>> rst = stepTwoA(cEq);
+	public ArrayList<ArrayList<String>> stepTwo(HashSet<String> q) {
+		ArrayList<ArrayList<String>> rst = stepTwoA(q);
 		rst = stepTwoB(rst);
 		return rst;
 	}
@@ -386,10 +385,11 @@ public class AutomataImp implements Automata {
 		return rst;
 	}
 	
-	
 	@Override
-	public boolean getAutomataType() {
-		return type;
+	public void restart () {
+		this.data = new HashMap<String,String[]>();
+		this.states = new HashMap<String,String>();
+		this.inputAlphabet = new HashSet<Character>();
+		this.outputAlphabet = new HashSet<String>();
 	}
-
 }
