@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 /**
  * 
  * @author Jhusseth
@@ -56,26 +57,31 @@ public class PanelOptions extends JPanel implements ActionListener{
 		panel.setLayout(new GridLayout(1, 5, 3,3));
 		
 		insertTable = new JButton("Insert");
+		insertTable.setIcon(new ImageIcon("data/buttons/002-plus.png"));
 		insertTable.setForeground(Color.WHITE);
 		insertTable.setBackground(new Color(0, 0, 0));
 		insertTable.addActionListener(this);
 		insertTable.setActionCommand(INSERT);
 		start = new JButton("Start");
+		start.setIcon(new ImageIcon("data/buttons/001-play.png"));
 		start.setForeground(Color.WHITE);
 		start.setBackground(Color.BLACK);
 		start.addActionListener(this);
 		start.setActionCommand(START);
 		clean = new JButton("Clean");
+		clean.setIcon(new ImageIcon("data/buttons/003-remove.png"));
 		clean.setForeground(Color.WHITE);
 		clean.setBackground(Color.BLACK);
 		clean.addActionListener(this);
 		clean.setActionCommand(CLEAN);
 		reboot = new JButton("Reboot");
+		reboot.setIcon(new ImageIcon("data/buttons/004-power.png"));
 		reboot.setForeground(Color.WHITE);
 		reboot.setBackground(Color.BLACK);
 		reboot.addActionListener(this);
 		reboot.setActionCommand(REBOOT);
 		about = new JButton("About");
+		about.setIcon(new ImageIcon("data/buttons/005-next-button.png"));
 		about.setForeground(Color.WHITE);
 		about.setBackground(new Color(0, 0, 0));
 		about.addActionListener(this);

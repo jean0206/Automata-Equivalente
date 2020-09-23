@@ -27,7 +27,7 @@ public class PanelBanner extends JPanel {
 	
 	
 	public void banner() throws IOException{
-		String path = "data/logo1.jpg";
+		String path = "data/logo.jpg";
         File file = new File(path);
         BufferedImage image = ImageIO.read(file);
         JLabel label = new JLabel(new ImageIcon(image));

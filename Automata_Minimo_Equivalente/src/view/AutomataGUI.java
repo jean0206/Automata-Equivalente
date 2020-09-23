@@ -6,6 +6,8 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 import controller.Controller;
 
@@ -31,10 +33,12 @@ public class AutomataGUI extends JFrame {
 	public AutomataGUI() {
 		
 		setTitle("Automata Equivalente");
-		setSize(432,370);
+		setSize(525,400);
 		setLayout(new BorderLayout());
 		
 		banner =  new PanelBanner();
+		
+		setResizable(false);
 		
 		table = new PanelTable(this);
 		automata = new AutomataConexo();
@@ -52,8 +56,11 @@ public class AutomataGUI extends JFrame {
 		
 		setLocationRelativeTo(null);
 		
+		JScrollPane sTables = new JScrollPane(tables);
+		sTables.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		
 		add(banner,BorderLayout.NORTH);
-		add(tables,BorderLayout.CENTER);
+		add(sTables,BorderLayout.CENTER);
 		add(panelOptions,BorderLayout.SOUTH);
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -87,7 +94,7 @@ public class AutomataGUI extends JFrame {
 			try {			
 				initialData = askInputs();
 			} catch (NullPointerException ex) {
-				return;
+				insertTable();
 			}
 			access = controller.InitialData(initialData);
 			if (!access)
