@@ -107,6 +107,7 @@ public class PanelOptions extends JPanel implements ActionListener{
 		}
 		if(event.equals(START)){
 			main.conexo();
+			insertTable.setEnabled(false);
 		}
 		if(event.equals(CLEAN)) {
 			main.clean();
@@ -128,8 +129,8 @@ public class PanelOptions extends JPanel implements ActionListener{
 	}
 	
 	public void buttonsEnable() {
-		insertTable.setEnabled(false);
 		start.setEnabled(true);
+		insertTable.setEnabled(false);
 		clean.setEnabled(true);
 		reboot.setEnabled(true);
 	}

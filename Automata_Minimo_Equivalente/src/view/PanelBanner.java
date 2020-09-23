@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
@@ -21,7 +22,7 @@ public class PanelBanner extends JPanel {
 			banner();
 		}
 		catch(Exception e) {
-			
+			JOptionPane.showMessageDialog(null, "No se cargo la imagen");
 		}
 	}
 	

@@ -80,6 +80,9 @@ public class AutomataGUI extends JFrame {
 		if(type==-1) {
 			insertTable();
 		}
+		if(type==2) {
+			System.exit(0);
+		}
 		
 		else if(type==0) {
 			controller.createAutomata(true);
@@ -105,8 +108,8 @@ public class AutomataGUI extends JFrame {
 	}
 	
 	public int askType() {
-		String[] opt = {"Mealy","Moore"};
-		int x = JOptionPane.showOptionDialog(null, "Seleccione el tipo de autómata a insertar","Elija", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opt, null);
+		String[] opt = {"Mealy","Moore","Salir"};
+		int x = JOptionPane.showOptionDialog(null, "Seleccione el tipo de autómata a insertar","Elija", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opt, opt[2]);
 		return x;
 	}
 	
@@ -127,10 +130,8 @@ public class AutomataGUI extends JFrame {
 	
 	public void reboot() {
 		clean();
-		table.removeAll();
-		automata.removeAll();
 		controller.restart();
-		table.createTable(null);
+		table.rbTable();
 		table.revalidate();
 		table.repaint();
 		insertTable();
@@ -143,8 +144,9 @@ public class AutomataGUI extends JFrame {
 			automata.createTable(controller.calculate());
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "No deben haber campos vacios");
 		}
 	}
+	
 
 }

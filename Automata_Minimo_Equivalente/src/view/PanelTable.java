@@ -25,7 +25,7 @@ public class PanelTable extends JPanel{
 	
 	private AutomataGUI main;
 	private JPanel stateTable;
-	private JTextField[][] matrix;
+	private JTextField[][] matrix; 
 
 	public PanelTable(AutomataGUI main) {
 		setBackground(Color.WHITE);
@@ -134,8 +134,7 @@ public class PanelTable extends JPanel{
 			for (int j = 0; j < matrix[0].length; j++) {
 				if(i!=0) {
 					if(matrix[i][j].getText().isEmpty() || matrix[i][j].getText()==" ") {
-						JOptionPane.showMessageDialog(null, "No deben haber campos vacios");
-						new Exception("No pueden haber campos vacios");
+						new Exception("No debe haber campos vacios");
 					}
 					dt[i-1][j]=matrix[i][j].getText();
 				}
@@ -144,5 +143,8 @@ public class PanelTable extends JPanel{
 		
 		return dt;
 	}
-
+	
+	public void rbTable() {
+		stateTable.removeAll();
+	}
 }

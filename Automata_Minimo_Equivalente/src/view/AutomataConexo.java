@@ -95,7 +95,7 @@ public class AutomataConexo extends JPanel{
 	}
 	
 	public void clean() {
-		this.removeAll();
+		stateTable.removeAll();
 		this.revalidate();
 		this.repaint();
 	}

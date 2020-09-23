@@ -25,7 +25,12 @@ public class Controller {
 	}
 	
 	public void restart() {
-		automata.restart();
+		try {
+			automata.restart();
+		}
+		catch(Exception e) {
+			
+		}
 	}
 	
 	public String[][] calculate() {
