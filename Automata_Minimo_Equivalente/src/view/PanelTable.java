@@ -7,7 +7,14 @@ import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.LineBorder;
 
+/**
+ * 
+ * @author Jhusseth
+ *
+ */
 public class PanelTable extends JPanel{
 	
 	/**
@@ -21,20 +28,25 @@ public class PanelTable extends JPanel{
 	private JTextField[][] matrix;
 
 	public PanelTable(AutomataGUI main) {
+		setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		
 		this.main =  main;
 		
 		JPanel panelTable = new JPanel();
+		panelTable.setBackground(Color.WHITE);
+		panelTable.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2), "Automata Inicial", TitledBorder.CENTER, TitledBorder.TOP, null, Color.BLACK));
 		
 		panelTable.setLayout(new BorderLayout());
 		stateTable = new JPanel();
+		stateTable.setBackground(Color.WHITE);
 		panelTable.add(stateTable,BorderLayout.CENTER);
 		
 		panelTable.revalidate();
 		panelTable.repaint();
 		
 		add(panelTable,BorderLayout.CENTER);
+		
 	}
 	
 	

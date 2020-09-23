@@ -7,7 +7,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
-
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+/**
+ * 
+ * @author Jhusseth
+ *
+ */
 public class PanelOptions extends JPanel implements ActionListener{
 
 	
@@ -40,25 +46,38 @@ public class PanelOptions extends JPanel implements ActionListener{
 	private AutomataGUI main;
 
 	public PanelOptions(AutomataGUI main) {
+		setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		this.main = main;
 		
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(1, 5));
+		panel.setBackground(Color.WHITE);
+		panel.setBorder(new EmptyBorder(2, 1, 2, 1));
+		panel.setLayout(new GridLayout(1, 5, 3,3));
 		
 		insertTable = new JButton("Insert");
+		insertTable.setForeground(Color.WHITE);
+		insertTable.setBackground(new Color(0, 0, 0));
 		insertTable.addActionListener(this);
 		insertTable.setActionCommand(INSERT);
 		start = new JButton("Start");
+		start.setForeground(Color.WHITE);
+		start.setBackground(Color.BLACK);
 		start.addActionListener(this);
 		start.setActionCommand(START);
 		clean = new JButton("Clean");
+		clean.setForeground(Color.WHITE);
+		clean.setBackground(Color.BLACK);
 		clean.addActionListener(this);
 		clean.setActionCommand(CLEAN);
 		reboot = new JButton("Reboot");
+		reboot.setForeground(Color.WHITE);
+		reboot.setBackground(Color.BLACK);
 		reboot.addActionListener(this);
 		reboot.setActionCommand(REBOOT);
 		about = new JButton("About");
+		about.setForeground(Color.WHITE);
+		about.setBackground(new Color(0, 0, 0));
 		about.addActionListener(this);
 		about.setActionCommand(ABOUT);
 		

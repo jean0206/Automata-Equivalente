@@ -362,14 +362,14 @@ public class AutomataImp implements Automata {
 			rst[0][rows] = "";
 		a = 1;
 		for (int i = 0; i < stepTwo.size(); i++) { //Each qn
-			rst[i+1][0] = "q"+a;
+			rst[i+1][0] = "S"+a;
 			HashSet<String> helpful = new HashSet<String>();
 			veryHelpful.put(rst[i+1][0],helpful);
 			String test = stepTwo.get(i).get(0);
 			for (int j = 0; j < inputAlphabet.size(); j++) {
 				String cell = data.get(test)[j];
 				cell = cell.split("\r")[0];
-				String qn = "q"+(findQn(stepTwo, type ? cell.substring(0,cell.length()-1):cell)+1);
+				String qn = "S"+(findQn(stepTwo, type ? cell.substring(0,cell.length()-1):cell)+1);
 				qn = type ? qn+"/"+cell.substring(cell.length()-1):qn;
 				rst[i+1][j+1] = qn;
 				helpful.add(data.get(test)[rows-1].split("\r")[0]);

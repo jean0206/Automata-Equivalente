@@ -25,13 +25,16 @@ public class AutomataGUI extends JFrame {
 	private PanelOptions options;
 	private AutomataConexo automata;
 	private Controller controller;
+	private PanelBanner banner;
 	
 	
 	public AutomataGUI() {
 		
 		setTitle("Automata Equivalente");
-		setSize(390,250);
+		setSize(432,370);
 		setLayout(new BorderLayout());
+		
+		banner =  new PanelBanner();
 		
 		table = new PanelTable(this);
 		automata = new AutomataConexo();
@@ -41,7 +44,7 @@ public class AutomataGUI extends JFrame {
 		panelOptions.setLayout(new BorderLayout());
 		
 		JPanel tables = new JPanel();
-		tables.setLayout(new GridLayout(1,2));
+		tables.setLayout(new GridLayout(1,2,3,3));
 		
 		tables.add(table);
 		tables.add(automata);
@@ -49,6 +52,7 @@ public class AutomataGUI extends JFrame {
 		
 		setLocationRelativeTo(null);
 		
+		add(banner,BorderLayout.NORTH);
 		add(tables,BorderLayout.CENTER);
 		add(panelOptions,BorderLayout.SOUTH);
 		
@@ -115,8 +119,11 @@ public class AutomataGUI extends JFrame {
 	
 	
 	public void reboot() {
+		clean();
+		table.removeAll();
+		automata.removeAll();
 		controller.restart();
-		table.createTable(controller.createTable());
+		table.createTable(null);
 		table.revalidate();
 		table.repaint();
 		insertTable();

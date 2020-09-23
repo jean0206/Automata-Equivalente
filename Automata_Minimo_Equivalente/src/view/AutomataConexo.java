@@ -6,7 +6,14 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
+/**
+ * 
+ * @author Jhusseth
+ *
+ */
 public class AutomataConexo extends JPanel{
 
 	/**
@@ -28,6 +35,9 @@ public class AutomataConexo extends JPanel{
 		panelTable.setLayout(new BorderLayout());
 		stateTable = new JPanel();
 		panelTable.add(stateTable,BorderLayout.CENTER);
+		
+		panelTable.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 2), "Automata Minimo Equivalente", TitledBorder.CENTER, TitledBorder.TOP, null, Color.BLACK));
+		
 		
 		panelTable.revalidate();
 		panelTable.repaint();
