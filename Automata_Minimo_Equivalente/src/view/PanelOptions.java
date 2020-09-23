@@ -2,13 +2,27 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.HeadlessException;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Date;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 /**
  * 
@@ -41,6 +55,9 @@ public class PanelOptions extends JPanel implements ActionListener{
 	public final static String REBOOT ="reboot";
 	public final static String ABOUT ="about";
 	
+	
+	private PanelAbout pAbout;
+	
 	/**
 	 * interfaz main AutomataGui
 	 */
@@ -50,6 +67,7 @@ public class PanelOptions extends JPanel implements ActionListener{
 		setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		this.main = main;
+		pAbout= new PanelAbout();
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -117,7 +135,11 @@ public class PanelOptions extends JPanel implements ActionListener{
 			buttonsDisable();
 		}
 		if(event.equals(ABOUT)) {
-			
+			JOptionPane.showConfirmDialog(null,
+                    pAbout,
+                    "Acerca: ",
+                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.PLAIN_MESSAGE);
 		}
 	}
 	
@@ -134,4 +156,6 @@ public class PanelOptions extends JPanel implements ActionListener{
 		clean.setEnabled(true);
 		reboot.setEnabled(true);
 	}
+	
+	
 }
