@@ -80,6 +80,11 @@ public class AutomataConexo extends JPanel{
 		}
 		matrix[0][0].setEditable(false);
 	}
+	/**
+	 * Show the table to the interface
+	 * @param rows number of rows to the matrix
+	 * @param columns number of columns to the matrix
+	 */
 	
 	private void showTable(int rows, int columns) {
 		stateTable.setLayout(new GridLayout(rows,columns));

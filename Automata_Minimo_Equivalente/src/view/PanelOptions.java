@@ -115,6 +115,10 @@ public class PanelOptions extends JPanel implements ActionListener{
 		add(panel, BorderLayout.CENTER);
 	}
 
+	/**
+	 * Events Buttons
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String event = e.getActionCommand();
@@ -132,7 +136,7 @@ public class PanelOptions extends JPanel implements ActionListener{
 		}
 		if(event.equals(REBOOT)) {
 			main.reboot();
-			buttonsDisable();
+			buttonsEnable();
 		}
 		if(event.equals(ABOUT)) {
 			JOptionPane.showConfirmDialog(null,
@@ -143,12 +147,19 @@ public class PanelOptions extends JPanel implements ActionListener{
 		}
 	}
 	
+	/**
+	 * Disable buttons according to events
+	 */
+	
 	public void buttonsDisable() {
 		start.setEnabled(false);
 		reboot.setEnabled(false);
 		clean.setEnabled(false);
 		insertTable.setEnabled(true);
 	}
+	/**
+	 * Enable buttons according to events
+	 */
 	
 	public void buttonsEnable() {
 		start.setEnabled(true);

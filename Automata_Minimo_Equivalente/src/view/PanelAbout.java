@@ -56,7 +56,7 @@ public class PanelAbout extends JPanel{
         
         
         aux.add(new JLabel());
-        JLabel label_2 = new JLabel("Jhusseth Sanchez");
+        JLabel label_2 = new JLabel("Jhusseth Sanchez \n- Jean Carlos Ortiz");
         label_2.setHorizontalAlignment(0);
         aux.add(label_2);
       

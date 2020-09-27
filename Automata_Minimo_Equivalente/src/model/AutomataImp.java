@@ -55,6 +55,10 @@ public class AutomataImp implements Automata {
 		this.type=type;
 	}
 	
+	/**Initialize the initial matrix of the automata
+	 * @return String matrix with the initial values
+	 * 
+	 */
 	
 	@Override
 	public String[][] getInitialTable() {
@@ -88,6 +92,10 @@ public class AutomataImp implements Automata {
 		String[][] c = stepThree(b);
 		return c;
 	}
+	
+	/**
+	 * Initialize the data in the matriz
+	 */
 	
 	@Override
 	public boolean setInitialData(String[] initialData) {
